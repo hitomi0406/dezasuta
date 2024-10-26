@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+body {
+    background-color: #eee;
+}
+
+.center {
+    text-align: center;
+    color: #19d687;
+}
+
+.box {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.box {
+    display: flex;
+    justify-content: space-around;
+}
+
+.Service {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px;
+}
+
+.Service2 {
+    color: #19d687;
+    border-left: 8px solid #19d687;
+}
+
+.Service1 {
+    background: #fff;
+}
+
+@media screen and (max-width: 400px){
+    .box {
+        flex-direction: column;
+        width: 100%;
+    }
+}
