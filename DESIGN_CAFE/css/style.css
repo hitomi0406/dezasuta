@@ -1,6 +1,20 @@
 @charset "utf-8";
 
-.header__inner{
+.sp {
+    display: none;
+}
+
+@media screen and (max-width:767px) {
+    .pc {
+        display: none;
+    }
+
+    .sp {
+        display: block;
+    }
+}
+
+.header__inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -13,16 +27,16 @@
     width: 100%;
 }
 
-.header__nav ul{
+.header__nav ul {
     display: flex;
     gap: 70px;
 }
 
-.header__nav li{
+.header__nav li {
     font-size: 18px;
     font-weight: bold;
     font-family: "游ゴシック体", YuGothic, "游ゴシック Medium",
-    "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+        "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
     color: #fff;
 }
 
@@ -42,6 +56,12 @@ body {
     margin-bottom: 70px;
 }
 
+@media screen and (max-width:767px) {
+    .wrapper {
+        padding: 0;
+    }
+}
+
 #gallery {
     margin-bottom: 70px;
 }
@@ -53,12 +73,27 @@ body {
     margin: 50px;
 }
 
+@media screen and (max-width:1100px) {
+    .top01 {
+        font-size: 17px;
+        margin: 40px;
+    }
+}
+
 .top02 {
     font-size: 82px;
     font-feature-settings: "palt";
-    line-height:  1.17em;
+    line-height: 1.17em;
     text-align: center;
     margin: 30px;
+}
+
+@media screen and (max-width:1100px) {
+    .top02 {
+        font-size: 38px;
+        line-height: 1.15em;
+        margin: 0;
+    }
 }
 
 .top03 {
@@ -69,16 +104,38 @@ body {
     margin-bottom: 30px;
 }
 
+@media screen and (max-width:1100px) {
+    .top03 {
+        font-size: 16px;
+        margin: 20px;
+    }
+}
+
 .about__inner {
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
+@media screen and (max-width:767px) {
+    .about__inner {
+        display: block;
+        align-items: center;
+        gap: 20px;
+    }
+}
+
 .aboutus {
     width: 50%;
     border-radius: 0 0 20% 0;
     object-fit: cover;
+}
+
+@media screen and (max-width:767px) {
+    .aboutus {
+        width: 100%;
+        border-radius: 0;
+    }
 }
 
 .head__logo img {
@@ -92,8 +149,7 @@ body {
     margin-bottom: 20px;
 }
 
-#about
-.head__logo {
+#about .head__logo {
     text-align: left;
 }
 
@@ -108,20 +164,38 @@ body {
 .about01 {
     font-size: 44px;
     font-feature-settings: "palt";
-    line-height:  1.38em;
+    line-height: 1.38em;
     color: #4f260b;
+}
+
+@media screen and (max-width:767px) {
+    .about01 {
+        font-size: 36px;
+    }
 }
 
 .about02 {
     width: 93%;
     font-size: 16px;
     font-feature-settings: "palt";
-    line-height:  1.62em;
+    line-height: 1.62em;
     color: #4f260b;
+}
+
+@media screen and (max-width:767px) {
+    .about02 {
+        font-size: 16px;
+    }
 }
 
 .menu__inner img {
     border-radius: 0 20% 0 0;
+}
+
+@media screen and (max-width:767px) {
+    .menu__inner {
+        display: block;
+    }
 }
 
 .menuitem {
@@ -129,6 +203,13 @@ body {
     gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+@media screen and (max-width:767px) {
+    .menuitem {
+        display: block;
+        justify-content: center;
+    }
 }
 
 ul.menuitem li {
@@ -143,6 +224,7 @@ ul.menuitem li {
     padding-left: 10px;
     margin-bottom: 17px;
 }
+
 .menutext {
     font-size: 17px;
     font-feature-settings: "palt";
@@ -177,10 +259,24 @@ ul.gallery__inner img {
     max-width: 730px;
 }
 
+@media screen and (max-width:767px) {
+    .event__content {
+        display: block;
+        padding: 30px;
+    }
+}
+
 .event__content a {
     display: flex;
     align-items: center;
     gap: 45px;
+}
+
+@media screen and (max-width:767px) {
+    .event__content a {
+        display: block;
+        font-size: 16px;
+    }
 }
 
 .eventdate {
@@ -200,7 +296,13 @@ ul.gallery__inner img {
     filter: grayscale(100%) invert(92%) contrast(83%);
 }
 
-.footer > div {
+@media screen and (max-width:767px) {
+    .map {
+        height: 190px;
+    }
+}
+
+.footer>div {
     max-width: 1000px;
     margin: 0 auto;
 }
@@ -209,9 +311,15 @@ ul.gallery__inner img {
     display: flex;
 }
 
+@media screen and (max-width:767px) {
+    .footer__inner {
+        display: block;
+    }
+}
+
 .footer {
     background-color: #fff;
-    height: 400px;   
+    height: 400px;
     padding: 83px 0 83px 0;
 }
 
@@ -224,7 +332,7 @@ ul.gallery__inner img {
 .footer__inner {
     font-size: 20px;
     font-feature-settings: "palt";
-    line-height:  1.95em;
+    line-height: 1.95em;
     color: #000;
 }
 
@@ -244,11 +352,11 @@ ul.gallery__inner img {
 }
 
 .sp__nav,
-hamburger {
+.hamburger {
     display: none;
 }
 
-@media screen and (max-width:1000px) {
+@media screen and (max-width:1100px) {
     .header__nav {
         display: none;
     }
@@ -306,7 +414,7 @@ hamburger {
         transform: rotate(-45deg);
         bottom: 0;
     }
-    
+
     .sp__nav {
         background-color: #000000bd;
         position: absolute;
@@ -326,8 +434,8 @@ hamburger {
 
     .sp__nav li {
         color: #fff;
-        font-family:  "游ゴシック体", YuGothic, "游ゴシック Medium",
-        "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+        font-family: "游ゴシック体", YuGothic, "游ゴシック Medium",
+            "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
         font-weight: bold;
     }
 
