@@ -58,7 +58,7 @@ body {
 
 @media screen and (max-width:767px) {
     .wrapper {
-        padding: 0 20px;
+        padding: 0;
     }
 }
 
@@ -126,7 +126,7 @@ body {
 }
 
 .aboutus {
-    width: 50%;
+
     border-radius: 0 0 20% 0;
     object-fit: cover;
 }
@@ -244,6 +244,7 @@ ul.menuitem li {
 @media screen and (max-width:767px) {
     ul.menuitem li {
         width: 100%;
+        margin: 0 0 20px 0;
     }
 
     ul.menuitem li img {
@@ -305,10 +306,10 @@ ul.gallery__inner img {
 
 }
 
-@media screen and (max-width:767px) {}
-
-.event__content a {
-    display: block;
+@media screen and (max-width:767px) {
+    .event__content a {
+        display: block;
+    }
 }
 
 .eventdate,
@@ -351,7 +352,7 @@ ul.gallery__inner img {
 .footer {
     background-color: #fff;
     height: 400px;
-    padding: 83px 0 83px 0;
+    padding: 83px 40px 83px 10px;
 }
 
 .footer__logo {
