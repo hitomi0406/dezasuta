@@ -25,6 +25,7 @@
     padding-top: 15px;
     position: absolute;
     width: 100%;
+    z-index: 9997;
 }
 
 .header__nav ul {
@@ -470,5 +471,13 @@ ul.gallery__inner img {
             "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
         font-weight: bold;
     }
+}
 
+.slick-dots {
+    bottom: 5px;
+}
+
+.slick-dots li.slick-active button:before,
+.slick-dots li button:before {
+    color: #fff;
 }
