@@ -7,6 +7,16 @@
     <title>yorimichi website</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <script>
+        (function (d) {
+            var config = {
+                kitId: 'lis6hdy',
+                scriptTimeout: 3000,
+                async: true
+            },
+                h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+        })(document);
+    </script>
 </head>
 
 <body>
@@ -52,7 +62,7 @@
 
     </header>
 
-    <div class="light">
+    <div class="light light01">
         <img src="images/light_on.png" alt="light_on">
     </div>
 
@@ -76,8 +86,7 @@
         </a>
     </div>
 
-    <div class="about__road"></div>
-    <div class="light light__dark">
+    <div class="light light02 light__dark">
         <img src="images/light_on.png" alt="light_on">
     </div>
 
@@ -88,51 +97,49 @@
 
         <div class="service__contents">
             <div class="service__design">
-                <img class="design__img" src="images/service_mouse.png" alt="service_mouse">
+                <img class="design__img" src="images/service_mouse.png" alt="service_mouse" />
                 <p class="srv__title">デザイン</p>
 
                 <p class="design__text">
-                    丁寧なヒアリングに基づいて、デザ
-                    インを作成します。サムネイル、バ
-                    ナー画像、アイコン制作などグラ
-                    フィックについても可能です。
+                    丁寧なヒアリングに基づいて、デザインを作成します。サムネイル、バナー画像、アイコン制作などグラフィックについても可能です。
                 </p>
-                <p class="srv__tools">使用ソフト：<br>
-                    Illustrator、Photoshop、Figma</p>
+                <p class="srv__tools">使用ソフト：<br />
+                    Illustrator、Photoshop、Figma
+                </p>
             </div>
 
             <div class="service__cording">
                 <img class="cording__img" src="images/service_keybord.png" alt="service_keybord">
                 <p class="srv__title">コーディング</p>
                 <p class="cording__text">
-                    デザインに沿ったコーディングを致し
-                    ます。コーポレイトサイトや、ラ
-                    ンディングページの実装を行います。
+                    デザインに沿ったコーディングを致します。コーポレイトサイトや、ランディングページの実装を行います。
                 </p>
-                <p class="srv__tools">使用言語：<br>
-                    HTML、CSS、Javascript</p>
+                <p class="srv__tools">
+                    使用言語：<br />
+                    HTML、CSS、Javascript
+                </p>
             </div>
 
             <div class="service__writing">
                 <img class="writing__img" src="images/service_pen.png" alt="service_pen">
                 <p class="srv__title">ライティング</p>
                 <p class="writing__text">
-                    あたたかみのある文章の作成を得意
-                    としています。取材・インタビュー・
-                    コラム・エッセイ・コピーライティ
-                    ングなどご相談に基づいて作成いた
-                    します。
+                    あたたかみのある文章の作成を得意としています。取材・インタビュー・コラム・エッセイ・コピーライティングなどご相談に基づいて作成いたします。
                 </p>
-                <p class="srv__tools">使用ソフト：<br>
-                    Googleドキュメント</p>
+                <p class="srv__tools">
+                    使用ソフト：<br />
+                    Googleドキュメント
+                </p>
             </div>
         </div>
 
-        <p class="etc">その他：Slack、chatwark、discord、zoom、google meet、Premia Pro</p>
+        <p class="etc">
+            その他：Slack、chatwark、discord、zoom、google meet、Premia Pro
+        </p>
     </div>
 
     <div class="srv__road"></div>
-    <div class="light light__dark">
+    <div class="light light03 light__dark">
         <img src="images/light_on.png" alt="light_on">
     </div>
 
@@ -148,13 +155,13 @@
         </div>
 
         <div class="see__more">
-            <a href="">もっと見る</a>
+            <a href="works.html">もっと見る</a>
         </div>
 
     </div>
 
     <div class="works__road"></div>
-    <div class="light light__dark">
+    <div class="light light04 light__dark">
         <img src="images/light_on.png" alt="light_on">
     </div>
 
@@ -255,8 +262,6 @@
         </span>
         <div class="footer__border"></div>
     </div>
-
-
 
 </body>
 

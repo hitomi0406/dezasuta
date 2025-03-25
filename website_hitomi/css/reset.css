@@ -27,7 +27,7 @@ dl {
     line-height: 1;
     /*デフォルトの文字色、font-familyを予め当てておく*/
     color: #838383;
-    font-family: "FOT-TsukuARdGothic Std", "筑紫A丸ゴシック Std R", "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+    font-family: "fot-tsukuardgothic-std", "筑紫A丸ゴシック Std R", "游ゴシック体", "YuGothic", "游ゴシック", "Yu Gothic", "メイリオ", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
 }
 
 a {

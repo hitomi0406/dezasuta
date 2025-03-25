@@ -17,8 +17,9 @@ body {
     /* 余白をなくす */
     padding: 0;
     background-attachment: fixed;
-    font-family: "FOT-TsukuARdGothic Std", "筑紫A丸ゴシック Std R", "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
-
+    font-family: "FOT-TsukuARdGothic Std", "筑紫A丸ゴシック Std R", "游ゴシック体",
+        YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", "Hiragino Kaku Gothic ProN",
+        "Hiragino Sans", sans-serif;
 }
 
 .header__inner::before {
@@ -26,8 +27,6 @@ body {
     position: absolute;
     top: 380px;
 }
-
-
 
 .about__road {
     position: relative;
@@ -54,13 +53,12 @@ body {
     position: relative;
 }
 
-.works__road::before {
+/* .works__road::before {
     content: url(../images/road_r.png);
     position: absolute;
     top: 400px;
     left: 100%;
-}
-
+} */
 
 /* ヘッダーセクション */
 .header__inner {
@@ -80,13 +78,15 @@ body {
 }
 
 .header__nav ul {
-
+    justify-content: space-between;
+    align-items: center;
     display: flex;
     margin-top: 45px;
 }
 
 .li__l {
-    width: 650px;
+    max-width: 650px;
+    width: 100%;
     padding: 45px;
     border: solid 1px #ffffff;
     border-radius: 50px;
@@ -105,9 +105,18 @@ body {
     background-color: #ffffff;
 }
 
+@media screen and (max-width: 1130px) {
+    .li__l {
+        padding: 16px 45px;
+    }
+
+    .li__r {
+        margin: 45px 10px 0;
+    }
+}
+
 .header__nav__list {
     display: flex;
-    gap: 70px;
 }
 
 .main__logo {
@@ -153,7 +162,6 @@ h2 p {
     text-align: center;
 }
 
-
 .prof__img {
     width: 130px;
 }
@@ -167,7 +175,6 @@ h2 p {
     font-size: 18px;
     font-weight: bold;
 }
-
 
 .about__text {
     width: 500px;
@@ -205,7 +212,6 @@ h2 p {
     margin: 0 32px;
 }
 
-
 .design__img {
     width: 110px;
 }
@@ -240,7 +246,6 @@ h2 p {
     text-align: left;
     margin: 20px 0 50px 0;
     line-height: 1.5;
-
 }
 
 .srv__title {
@@ -260,12 +265,13 @@ h2 p {
 
 .works__contents {
     display: flex;
-    width: 1240px;
+    justify-content: space-between;
+    max-width: 1240px;
     margin: 0 auto;
 }
 
 .works__section a {
-    margin: 0 30px;
+    width: 29%;
 }
 
 /* ライティングセクション */
@@ -302,7 +308,6 @@ h2 p {
 .essei,
 .sanpo {
     display: flex;
-
 }
 
 .taiyaki__text,
@@ -368,6 +373,7 @@ h2 p {
 }
 
 .form {
+    display: block;
     font-size: 21px;
     width: 650px;
     margin: 100px auto;
@@ -377,7 +383,6 @@ h2 p {
     background-color: #ffffff;
     text-align: center;
 }
-
 
 .footer {
     background-color: #e6e6e6;
@@ -389,9 +394,6 @@ h2 p {
 .footer__border {
     border-top: solid 1px #838383;
 }
-
-
-
 
 /* まとめてるdivたち */
 
@@ -416,13 +418,17 @@ h3 {
 .light {
     width: 300px;
     margin: 0 auto;
+    position: relative;
 }
 
 .light__dark {
-    margin: 300px auto;
+    width: 100%;
+    text-align: center;
+    padding: 300px 0;
 }
 
 .see__more {
+    display: block;
     font-size: 21px;
     width: 200px;
     margin: 100px auto;
@@ -431,4 +437,24 @@ h3 {
     border-radius: 50px;
     background-color: #ffffff;
     text-align: center;
+}
+
+.light01::before {
+    display: none;
+}
+
+.light02::before {
+    top: 40%;
+    right: 0;
+    left: auto;
+}
+
+.light03::before {
+    display: none;
+}
+
+.light04::before {
+    top: 40%;
+    right: 0;
+    left: auto;
 }
