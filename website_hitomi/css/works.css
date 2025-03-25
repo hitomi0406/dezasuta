@@ -24,7 +24,7 @@ h3 {
 
 .header__inner {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin: 0 auto;
     position: relative;
     margin-bottom: 100px;
@@ -32,7 +32,7 @@ h3 {
 
 .header__logo {
     width: 200px;
-    padding: 90px 220px 0 30px;
+    padding: 90px 20px 0 30px;
 }
 
 .header__nav {
@@ -40,7 +40,8 @@ h3 {
 }
 
 .header__nav ul {
-
+    justify-content: space-between;
+    align-items: center;
     display: flex;
     margin-top: 45px;
 }
@@ -49,7 +50,7 @@ h3 {
     width: 650px;
     justify-content: space-around;
     padding: 45px;
-    border: solid 1px #ffffff;
+    border: solid 1px #838383;
     border-radius: 50px;
     gap: 40px;
     background-color: #838383;
@@ -60,10 +61,20 @@ h3 {
     width: 130px;
     margin: 45px 60px 0 50px;
     padding: 45px;
-    border: solid 1px #ffffff;
+    border: solid 1px #838383;
     border-radius: 50px;
     gap: 40px;
     background-color: #838383;
+}
+
+@media screen and (max-width: 1130px) {
+    .li__l {
+        padding: 16px 45px;
+    }
+
+    .li__r {
+        margin: 45px 10px 0;
+    }
 }
 
 .header__nav__list {
