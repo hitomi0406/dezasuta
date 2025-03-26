@@ -48,7 +48,7 @@ h3 {
 
 .li__l {
     width: 650px;
-    justify-content: space-around;
+    width: 100%;
     padding: 45px;
     border: solid 1px #838383;
     border-radius: 50px;
@@ -79,7 +79,6 @@ h3 {
 
 .header__nav__list {
     display: flex;
-    gap: 70px;
 }
 
 .header__nav__list a {
