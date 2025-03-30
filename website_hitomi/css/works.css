@@ -7,7 +7,7 @@ body {
 h3 {
     font-size: 50px;
     font-weight: bold;
-    width: 600px;
+    max-width: 600px;
     margin: 0 auto 5px;
     padding-top: 120px;
     text-align: center;
@@ -25,8 +25,9 @@ h3 {
 .header__inner {
     display: flex;
     justify-content: space-between;
-    margin: 0 auto;
+    margin: 0;
     position: relative;
+    max-width: 100%;
     margin-bottom: 100px;
 }
 
@@ -48,9 +49,8 @@ h3 {
 
 .li__l {
     width: 650px;
-    width: 100%;
     padding: 45px;
-    border: solid 1px #838383;
+    border: solid 1px #ffffff;
     border-radius: 50px;
     gap: 40px;
     background-color: #838383;
@@ -61,20 +61,9 @@ h3 {
     width: 130px;
     margin: 45px 60px 0 50px;
     padding: 45px;
-    border: solid 1px #838383;
+    border: solid 1px #ffffff;
     border-radius: 50px;
-    gap: 40px;
     background-color: #838383;
-}
-
-@media screen and (max-width: 1130px) {
-    .li__l {
-        padding: 16px 45px;
-    }
-
-    .li__r {
-        margin: 45px 10px 0;
-    }
 }
 
 .header__nav__list {
@@ -85,11 +74,6 @@ h3 {
     color: #fff;
 }
 
-.main__logo {
-    width: 600px;
-    margin: 0 auto;
-    margin-top: 200px;
-}
 
 .works__title {
     margin-top: -100px;
@@ -107,7 +91,6 @@ h2 p {
 .main__title {
     text-align: center;
     width: 320px;
-
 }
 
 .works__category__section {
@@ -119,40 +102,34 @@ h2 p {
     width: 1000px;
     display: flex;
     justify-content: flex-start;
-
+    gap: 20px;
 }
 
 .works__category li {
     font-size: 17px;
     border: solid 1px #838383;
-    margin: 0 20px 80px 0;
+    margin-bottom: 80px;
     padding: 2px 10px 5px;
-
 }
-
-
 
 .worksimg__section {
     display: flex;
     justify-content: center;
-    gap: 40px;
     margin: 0 auto;
-    width: 1000px;
+    max-width: 1000px;
 
 }
 
 .works__list {
     display: flex;
     flex-wrap: wrap;
-    gap: 40px;
+    row-gap: 40px;
     justify-content: space-between;
 }
 
 .works__list li {
-    width: 300px;
+    width: 30%;
     border: solid 1px #838383;
-    gap: 40px;
-
 }
 
 .footer {
@@ -180,6 +157,7 @@ h2 p {
 
 }
 
+
 .main__image,
 .text__section {
     margin: 10px 0;
@@ -191,7 +169,7 @@ h2 p {
     justify-content: center;
     gap: 40px;
     margin: 0 auto;
-    width: 1000px;
+    max-width: 1000px;
 }
 
 .main__image {
@@ -201,16 +179,12 @@ h2 p {
     justify-content: center;
 }
 
-
-
-
 h1 {
     font-weight: normal;
     font-size: 26px;
     margin-bottom: 10px;
     justify-content: flex-start;
 }
-
 
 .detail__text {
     font-size: 26px;
@@ -277,4 +251,223 @@ h1 {
 
 .detail__footer__list :hover {
     text-decoration: underline;
+}
+
+.sp__nav,
+.hamburger {
+    display: none;
+}
+
+/* レスポンシブノートサイズ */
+@media screen and (max-width: 1440px) {
+    .li__r {
+        display: flex;
+        align-items: center;
+        margin: 45px 10px 0 20px;
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .li__l {
+        width: 480px;
+        border-radius: 50px;
+    }
+
+    .works__contents {
+        justify-content: space-around;
+    }
+}
+
+
+
+/* レスポンシブスマホサイズ */
+@media screen and (max-width: 960px) {
+    .header__nav {
+        display: none;
+    }
+
+    .header__inner::before {
+        display: none;
+    }
+
+    .header__logo {
+        padding: 20px 20px 0 20px;
+        z-index: 9999;
+    }
+
+    /* ハンバーガーメニュー */
+    .hamburger {
+        width: 40px;
+        height: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+        position: absolute;
+        /* 絶対位置指定 */
+        top: 20px;
+        /* 上からの距離を調整 */
+        right: 20px;
+        /* 右端に配置 */
+        z-index: 9999;
+        /* 他の要素より前面に表示 */
+    }
+
+    .line {
+        width: 100%;
+        height: 5px;
+        background-color: #838383;
+        border-radius: 3px;
+        transition: transform 0.3s;
+    }
+
+    #line1 {
+        position: relative;
+    }
+
+    #line1::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 10px;
+        /* 切れ目の位置 */
+        width: 5px;
+        height: 100%;
+        background: #fff
+    }
+
+    .z-shape #line1 {
+        transform: translateY(-2px);
+    }
+
+    .z-shape #line3 {
+        transform: translateY(2px);
+    }
+
+    .z-shape #line2 {
+        transform: scaleX(1.2) rotate(-37deg);
+    }
+
+    /* ハンバーガーメニューがクリックされたときのスタイル */
+
+
+    .sp__nav {
+        opacity: 0;
+        background-color: #fff;
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: opacity 0.5s ease;
+        z-index: 9998;
+    }
+
+    .sp__nav.visible {
+        transition: opacity 0.8s ease;
+        opacity: 100;
+        margin-top: 50px;
+    }
+
+    .sp__nav ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .sp__li__l li {
+        color: #838383;
+        font-size: 30px;
+    }
+
+
+    .sp__li__r {
+        font-size: 20px;
+        color: #fff;
+        text-align: center;
+        margin-top: 50px;
+        width: 100px;
+        padding: 30px;
+        border: solid 1px #838383;
+        border-radius: 50px;
+        background-color: #838383;
+    }
+
+    .sp__light {
+        display: flex;
+        justify-content: center;
+        width: 200px;
+        margin-top: 50px;
+    }
+
+
+    .header__inner {
+        margin-bottom: 50px;
+    }
+
+    h3 {
+        font-size: 38px;
+    }
+
+    .title__en {
+        font-size: 31px;
+        margin-top: 15px;
+    }
+
+    .works__title {
+        margin-bottom: 100px;
+    }
+
+
+    .works__category {
+        width: 500px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .works__category__section {
+        height: 20px;
+        align-items: center;
+        padding-bottom: 10px;
+    }
+
+
+
+
+    .works__list {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .works__list li {
+        width: 40%;
+        border: solid 1px #838383;
+    }
+
+    /* 詳細ページ */
+    .text__section {
+        max-width: 300px;
+    }
+
+    h2,
+    .detail__text {
+        font-weight: normal;
+        font-size: 18px;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .outline {
+        font-size: 16px;
+    }
+
+
 }

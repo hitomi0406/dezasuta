@@ -5,8 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>yorimichi website</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/works.css">
+    <link rel="stylesheet" href="../css/reset.css">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    <link rel="stylesheet" href="../css/works.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script>
         (function (d) {
             var config = {
@@ -17,38 +24,54 @@
                 h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
         })(document);
     </script>
-
 </head>
 
 <body>
     <div class="header__inner">
         <h1 class="header__logo">
-            <a href="./index.html">
-                <img src="images/titlelogo_grey.png" alt="title_logo">
+            <a href="../index.html">
+                <img src="../images/titlelogo_grey.png" alt="title_logo">
             </a>
         </h1>
 
         <div class="header__nav">
             <nav class="header__nav__list">
                 <ul class="li__l">
-                    <li><a href="#about">わたしについて</a></li>
-                    <li><a href="#service">できること</a></li>
-                    <li><a href="#works">作ったもの</a></li>
-                    <li><a href="#writing">書いたもの</a></li>
+                    <li><a href="../index.html#about">わたしについて</a></li>
+                    <li><a href="../index.html#service">できること</a></li>
+                    <li><a href="../index.html#works">作ったもの</a></li>
+                    <li><a href="../index.html#writing">書いたもの</a></li>
                 </ul>
-                <a class="li__r" href="#contact">話をする</a>
+                <a class="li__r" href="../index.html#contact">話をする</a>
             </nav>
         </div>
-
+        <!-- ハンバーガーメニュー -->
+        <div class="hamburger" id="menu">
+            <div class="line" id="line1"></div>
+            <div class="line" id="line2"></div>
+            <div class="line" id="line3"></div>
+        </div>
+        <nav class="sp__nav">
+            <ul class="sp__li__l">
+                <li><a href="#about">わたしについて</a></li>
+                <li><a href="#service">できること</a></li>
+                <li><a href="#works">作ったもの</a></li>
+                <li><a href="#writing">書いたもの</a></li>
+                <a class="sp__li__r" href="#contact">話をする</a>
+            </ul>
+            <div class="sp__light">
+                <img src="../images/light_dark.png" alt="light_on">
+            </div>
+        </nav>
     </div>
 
     <div class="detail__body">
         <div class="main__image">
-            <img src="images/works_banner01_1.jpg" alt="">
+            <img src="../images/works_banner01_1.jpg" alt="">
         </div>
 
         <div class="text__section">
-            <h1>「ワクワクを見つけよう！」</h1> <!-- タイトル-->
+            <h2>「ワクワクを見つけよう！」</h2> <!-- タイトル-->
             <p class="detail__text">バナーデザイン</p> <!-- 説明-->
             <p class="outline">概要</p>
 
@@ -74,9 +97,9 @@
         </div>
 
         <div class="sub__images">
-            <div><img src="images/works_banner01_2.jpg" alt=""></div>
-            <div><img src="images/works_banner01_3.jpg" alt=""></div>
-            <div><img src="images/works_banner01_4.jpg" alt=""></div>
+            <div><img src="../images/works_banner01_2.jpg" alt=""></div>
+            <div><img src="../images/works_banner01_3.jpg" alt=""></div>
+            <div><img src="../images/works_banner01_4.jpg" alt=""></div>
         </div>
 
     </div>
@@ -84,11 +107,27 @@
     <div class="detail__footer">
         <ul class="detail__footer__list">
             <li><a href="">← 前の作品</a></li>
-            <li class="jump__works"><a href="works.html">一覧に戻る</a></li>
+            <li class="jump__works"><a href="works_index.html">一覧に戻る</a></li>
             <li><a href="">次の作品 →</a></li>
         </ul>
     </div>
 
+    <script>
+        document.getElementById("menu").addEventListener("click", function () {
+            this.classList.toggle("z-shape");
+
+        });
+
+        $(function () {
+            // ハンバーガーメニュー
+            $('.hamburger').click(function () {
+                $('.sp__nav').toggleClass('visible');
+                $('.hamburger').toggleClass('open');
+            });
+        });
+
+
+    </script>
 
 </body>
 

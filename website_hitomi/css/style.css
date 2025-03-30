@@ -32,7 +32,7 @@ body {
     position: relative;
 }
 
-.about__road::before {
+.light::before {
     content: url(../images/road_r.png);
     position: absolute;
     top: 400px;
@@ -53,12 +53,7 @@ body {
     position: relative;
 }
 
-/* .works__road::before {
-    content: url(../images/road_r.png);
-    position: absolute;
-    top: 400px;
-    left: 100%;
-} */
+
 
 /* ヘッダーセクション */
 .header__inner {
@@ -66,11 +61,12 @@ body {
     justify-content: space-between;
     margin: 0 auto;
     position: relative;
+    max-width: 100%;
 }
 
 .header__logo {
     width: 200px;
-    padding: 90px 220px 0 30px;
+    padding: 90px 20px 0 30px;
 }
 
 .header__nav {
@@ -85,8 +81,7 @@ body {
 }
 
 .li__l {
-    max-width: 650px;
-    width: 100%;
+    width: 650px;
     padding: 45px;
     border: solid 1px #ffffff;
     border-radius: 50px;
@@ -101,30 +96,20 @@ body {
     padding: 45px;
     border: solid 1px #ffffff;
     border-radius: 50px;
-    gap: 40px;
     background-color: #ffffff;
-}
-
-@media screen and (max-width: 1130px) {
-    .li__l {
-        padding: 16px 45px;
-    }
-
-    .li__r {
-        margin: 45px 10px 0;
-    }
 }
 
 .header__nav__list {
     display: flex;
+
+    /* 右に動かす */
 }
 
 .main__logo {
-    width: 600px;
+    max-width: 600px;
     margin: 0 auto;
     margin-top: 200px;
 }
-
 
 h2 {
     margin: 30px auto;
@@ -137,15 +122,14 @@ h2 p {
 
 .main__title {
     text-align: center;
-    width: 320px;
-
+    max-width: 320px;
 }
 
 .scroll {
     font-size: 16px;
     font-weight: bold;
     text-align: center;
-    width: 500px;
+    max-width: 500px;
     margin: 0 auto 70px;
 }
 
@@ -160,6 +144,7 @@ h2 p {
     padding-top: 150px;
     padding-bottom: 150px;
     text-align: center;
+    height: 100vh;
 }
 
 .prof__img {
@@ -177,7 +162,8 @@ h2 p {
 }
 
 .about__text {
-    width: 500px;
+    max-width: 520px;
+    width: 100%;
     margin: 38px auto;
     font-size: 16px;
     text-align: left;
@@ -190,7 +176,6 @@ h2 p {
 .inst__icon {
     width: 40px;
 }
-
 
 /* サービスセクション */
 .service__section {
@@ -208,7 +193,7 @@ h2 p {
 .service__design,
 .service__cording,
 .service__writing {
-    width: 260px;
+    max-width: 260px;
     margin: 0 32px;
 }
 
@@ -271,6 +256,7 @@ h2 p {
 }
 
 .works__section a {
+    /* margin: 0 30px; */
     width: 29%;
 }
 
@@ -281,13 +267,8 @@ h2 p {
     padding-bottom: 150px;
 }
 
-.writing__contents {
-    display: flex;
-    width: 1240px;
-}
-
 .writing__section img {
-    width: 220px;
+    max-width: 220px;
 }
 
 .writing__section .writing.contents {
@@ -298,30 +279,27 @@ h2 p {
     /* 要素間のスペースを調整 */
 }
 
-.writing__section .writing.contents>div {
-    flex: 1;
-    max-width: 1240px;
-    /* 必要に応じて調整 */
-}
+
 
 .taiyaki,
 .essei,
 .sanpo {
     display: flex;
+    width: 800px;
 }
 
 .taiyaki__text,
 .essei__text,
 .sanpo__text {
     margin-left: 30px;
-    width: 550px;
+    max-width: 550px;
     font-size: 16px;
 }
 
 .taiyaki__img,
 .essei__img,
 .sanpo__img {
-    width: 220px;
+    max-width: 220px;
 }
 
 .text__title {
@@ -354,6 +332,7 @@ h2 p {
 
 /* お問い合わせセクション */
 .contact__section {
+    height: 100vh;
     padding-top: 150px;
     padding-bottom: 150px;
     text-align: center;
@@ -372,10 +351,10 @@ h2 p {
     margin-bottom: 50px;
 }
 
-.form {
+.form a {
     display: block;
     font-size: 21px;
-    width: 650px;
+    max-width: 650px;
     margin: 100px auto;
     padding: 35px;
     border: solid 1px #ffffff;
@@ -400,7 +379,7 @@ h2 p {
 h3 {
     font-size: 50px;
     font-weight: bold;
-    width: 600px;
+    max-width: 600px;
     margin: 0 auto 5px;
     padding-top: 120px;
     text-align: center;
@@ -423,11 +402,12 @@ h3 {
 
 .light__dark {
     width: 100%;
+    height: 100vh;
     text-align: center;
     padding: 300px 0;
 }
 
-.see__more {
+.see__more a {
     display: block;
     font-size: 21px;
     width: 200px;
@@ -457,4 +437,308 @@ h3 {
     top: 40%;
     right: 0;
     left: auto;
+}
+
+.sp__nav,
+.hamburger,
+.slider__area {
+    display: none;
+}
+
+/* レスポンシブノートサイズ */
+@media screen and (max-width: 1440px) {
+    .li__r {
+        display: flex;
+        align-items: center;
+        margin: 45px 10px 0 20px;
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .li__l {
+        width: 480px;
+        border-radius: 50px;
+    }
+
+    .works__contents {
+        justify-content: space-around;
+    }
+}
+
+
+
+/* レスポンシブスマホサイズ */
+@media screen and (max-width: 960px) {
+    .header__nav {
+        display: none;
+    }
+
+    .header__inner::before {
+        display: none;
+    }
+
+    .header__logo {
+        padding: 20px 20px 0 20px;
+        z-index: 9999;
+    }
+
+    /* ハンバーガーメニュー */
+    .hamburger {
+        width: 40px;
+        height: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+        position: absolute;
+        /* 絶対位置指定 */
+        top: 20px;
+        /* 上からの距離を調整 */
+        right: 20px;
+        /* 右端に配置 */
+        z-index: 9999;
+        /* 他の要素より前面に表示 */
+    }
+
+    .line {
+        width: 100%;
+        height: 5px;
+        background-color: #fff;
+        border-radius: 3px;
+        transition: transform 0.3s;
+    }
+
+    #line1 {
+        position: relative;
+    }
+
+    #line1::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 10px;
+        /* 切れ目の位置 */
+        width: 5px;
+        height: 100%;
+        background: grey
+    }
+
+    .z-shape #line1 {
+        transform: translateY(-2px);
+    }
+
+    .z-shape #line3 {
+        transform: translateY(2px);
+    }
+
+    .z-shape #line2 {
+        transform: scaleX(1.2) rotate(-37deg);
+    }
+
+    /* ハンバーガーメニューがクリックされたときのスタイル */
+
+
+    .sp__nav {
+        opacity: 0;
+        background-color: #838383;
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: opacity 0.5s ease;
+        z-index: 9998;
+    }
+
+    .sp__nav.visible {
+        transition: opacity 0.8s ease;
+        opacity: 100;
+        margin-top: 50px;
+    }
+
+    .sp__nav ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .sp__li__l li {
+        color: #fff;
+        font-size: 30px;
+    }
+
+
+    .sp__li__r {
+        font-size: 20px;
+        color: black;
+        text-align: center;
+        margin-top: 50px;
+        width: 100px;
+        padding: 30px;
+        border: solid 1px #ffffff;
+        border-radius: 50px;
+        background-color: #ffffff;
+    }
+
+    .sp__light {
+        display: flex;
+        justify-content: center;
+        width: 200px;
+        margin-top: 50px;
+    }
+
+    .main__logo {
+        max-width: 330px
+    }
+
+    h2 {
+        font-size: 22px;
+        font-weight: normal;
+        width: 200px;
+    }
+
+    h2 p {
+        line-height: 1.5;
+    }
+
+    .light {
+        width: 200px;
+    }
+
+    .scroll {
+        margin-bottom: 30px;
+        /*jsの挙動で調整*/
+    }
+
+    .about__text {
+        max-width: 320px;
+        width: 100%;
+        margin-bottom: 100px;
+    }
+
+    h3 {
+        font-size: 38px;
+    }
+
+    .title__en {
+        font-size: 31px;
+        margin-top: 15px;
+    }
+
+    .about__name {
+        margin: 30px 0 10px;
+    }
+
+    .service__contents {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* 中央揃え */
+    }
+
+    .etc {
+        white-space: pre-line;
+        /* 改行を有効にする */
+        line-height: 1.5;
+    }
+
+    .works__contents {
+        display: none;
+    }
+
+    .slider__area {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .slick-dots li.slick-active button:before {
+        opacity: 1;
+        color: #838383;
+    }
+
+    .slick-dots li button:before {
+        opacity: 1;
+        color: #ffffff;
+    }
+
+
+    .taiyaki,
+    .essei,
+    .sanpo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 350px;
+    }
+
+
+    .taiyaki__text,
+    .essei__text,
+    .sanpo__text {
+        margin-top: 10px;
+        margin-left: 0;
+    }
+
+    .taiyaki__text,
+    .essei__text,
+    .sanpo__text {
+        white-space: pre-line;
+        font-size: 13px;
+        font-weight: normal;
+    }
+
+    .text__title {
+        font-weight: normal;
+        white-space: pre-line;
+        font-size: 16px;
+    }
+
+    .writing.contents ul {
+        display: flex;
+        justify-content: flex-start;
+        margin: 0 auto 8px;
+    }
+
+    .writing.contents ul li {
+        font-size: 13px;
+        border: solid 1px #fff;
+        background-color: #fff;
+        padding: 2px 5px;
+    }
+
+    .jump {
+        margin: 0 0 30px;
+    }
+
+    .see__more a {
+        display: block;
+        font-size: 16px;
+        width: 100px;
+        margin: 80px auto;
+        padding: 20px;
+        border: solid 1px #ffffff;
+        border-radius: 35px;
+        background-color: #ffffff;
+        text-align: center;
+    }
+
+    .form a {
+        font-size: 18px;
+        max-width: 250px;
+        margin: 100px auto;
+        padding: 35px 20px;
+        border: solid 1px #ffffff;
+        border-radius: 50px;
+        background-color: #ffffff;
+        text-align: center;
+    }
+
 }

@@ -6,7 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>yorimichi website</title>
     <link rel="stylesheet" href="css/reset.css">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script>
         (function (d) {
             var config = {
@@ -24,7 +31,7 @@
 
         <div class="header__inner">
             <h1 class="header__logo">
-                <a href="./index.html">
+                <a href="index.html">
                     <img src="images/title_logo.png" alt="title_logo">
                 </a>
             </h1>
@@ -40,6 +47,26 @@
                     <a class="li__r" href="#contact">話をする</a>
                 </nav>
             </div>
+
+            <!-- ハンバーガーメニュー -->
+            <div class="hamburger" id="menu">
+                <div class="line" id="line1"></div>
+                <div class="line" id="line2"></div>
+                <div class="line" id="line3"></div>
+            </div>
+
+            <nav class="sp__nav">
+                <ul class="sp__li__l">
+                    <li><a href="#about">わたしについて</a></li>
+                    <li><a href="#service">できること</a></li>
+                    <li><a href="#works">作ったもの</a></li>
+                    <li><a href="#writing">書いたもの</a></li>
+                    <a class="sp__li__r" href="#contact">話をする</a>
+                </ul>
+                <div class="sp__light">
+                    <img src="images/light_dark.png" alt="">
+                </div>
+            </nav>
 
         </div>
 
@@ -77,8 +104,8 @@
 
         <div class="about__text">
             <p>東京都出身。2021年より京都府在住。</p>
-            <p>2018年よりWEBライター・コンテンツ企画者として働き、</p>
-            <p> 2025年よりWEBデザイナーとしての活動も始めた。</p>
+            <p>2018年よりWEBライター・コンテンツ企画者として働き、
+                2025年よりWEBデザイナーとしての活動も始めた。</p>
         </div>
 
         <a href="https://www.instagram.com/potaufeu_tbti/" target="_blank">
@@ -134,7 +161,9 @@
         </div>
 
         <p class="etc">
-            その他：Slack、chatwark、discord、zoom、google meet、Premia Pro
+            その他：
+            Slack、chatwark、discord、
+            zoom、google meet、Premiere Pro
         </p>
     </div>
 
@@ -154,8 +183,18 @@
             <a href=""><img src="images/work_icons/works_icon12.png" alt=""></a>
         </div>
 
+
+        <div class="slider__area">
+            <picture><img src="images/work_icons/works_icon01.png" alt=""></picture>
+            <picture><img src="images/work_icons/works_icon06.png" alt=""></picture>
+            <picture><img src="images/work_icons/works_icon12.png" alt=""></picture>
+            <picture><img src="images/work_icons/works_icon02.png" alt=""></picture>
+            <picture><img src="images/work_icons/works_icon03.png" alt=""></picture>
+        </div>
+
+
         <div class="see__more">
-            <a href="works.html">もっと見る</a>
+            <a href="works/works_index.html">もっと見る</a>
         </div>
 
     </div>
@@ -176,7 +215,9 @@
                     <img src="images/writing_taiyaki.png" alt="">
                 </div>
                 <div class="taiyaki__text">
-                    <p class="text__title">いつでも、誰でも。東京で100年愛されてきたたいやき</p>
+                    <p class="text__title">いつでも、誰でも。
+                        東京で100年愛されてきたたいやき
+                    </p>
                     <p class="text__title">― 麻布十番「浪花家総本店」</p>
 
                     <ul>
@@ -184,11 +225,12 @@
                         <li>執筆</li>
                         <li>取材</li>
                     </ul>
-                    <p>東京・麻布十番にある老舗たい焼き屋「浪花家総本店」を取材しました。</p>
+                    <p>東京・麻布十番にある老舗たい焼き屋
+                        「浪花家総本店」を取材しました。</p>
 
                     <div class="jump">
-                        <a href="https://woman.chintai/article/odekake/1385_naniwayasouhonten/" target="_blank">サイトを見る
-                            →</a>
+                        <a href="https://woman.chintai/article/odekake/1385_naniwayasouhonten/" target="_blank">
+                            記事を読む →</a>
                     </div>
                 </div>
 
@@ -207,9 +249,10 @@
                         <li>執筆</li>
                         <li>企画</li>
                     </ul>
-                    <p>アート作品を家に迎えた際のことをコラムとして執筆しました。</p>
+                    <p>アート作品を家に迎えた際のことを
+                        コラムとして執筆しました。</p>
                     <div class="jump">
-                        <a href="https://mook.casie.jp/articles/staffart03" target="_blank">サイトを見る →</a>
+                        <a href="https://mook.casie.jp/articles/staffart03" target="_blank">記事を読む →</a>
                     </div>
 
                 </div>
@@ -220,7 +263,8 @@
                     <img src="images/writing_artsanpo.png" alt="">
                 </div>
                 <div class="sanpo__text">
-                    <p class="text__title">編集部とめぐる！アートな散歩【京都岡崎編】</p>
+                    <p class="text__title">編集部とめぐる！
+                        アートな散歩【京都岡崎編】</p>
 
                     <ul>
                         <li>撮影</li>
@@ -228,10 +272,12 @@
                         <li>企画</li>
                         <li>取材</li>
                     </ul>
-                    <p>京都・岡崎エリアのなかからアートにまつわる箇所をリサーチして、取材、執筆を行いました。</p>
+                    <p>京都・岡崎エリアのなかから
+                        アートにまつわる箇所を
+                        リサーチ、取材、執筆を行いました。</p>
 
                     <div class="jump">
-                        <a href="https://mook.casie.jp/articles/artsanpo01" target="_blank">サイトを見る →</a>
+                        <a href="https://mook.casie.jp/articles/artsanpo01" target="_blank">記事を読む →</a>
                     </div>
 
                 </div>
@@ -262,6 +308,34 @@
         </span>
         <div class="footer__border"></div>
     </div>
+
+    <script>
+        document.getElementById("menu").addEventListener("click", function () {
+            this.classList.toggle("z-shape");
+
+        });
+
+        $(function () {
+            // ハンバーガーメニュー
+            $('.hamburger').click(function () {
+                $('.sp__nav').toggleClass('visible');
+                $('.hamburger').toggleClass('open');
+            });
+            //スライダー
+            $(".slider__area").slick({
+                dots: true,
+                infinite: true,
+                speed: 1000,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 1800,
+                arrows: false,
+            });
+        });
+
+
+    </script>
 
 </body>
 
