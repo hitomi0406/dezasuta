@@ -454,20 +454,49 @@ h1 {
 
     /* 詳細ページ */
     .text__section {
-        max-width: 300px;
+        margin-top: 0;
+        max-width: 400px;
     }
 
     h2,
     .detail__text {
         font-weight: normal;
         font-size: 18px;
-        margin: 10px 0;
+        margin: 0 0 10px;
         text-align: center;
     }
 
     .outline {
         font-size: 16px;
+        margin-bottom: 0;
     }
 
+    .detail__list {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .detail__li__l {
+        margin-left: 30px;
+    }
+    .detail__li__r{
+        margin-top: 25px;
+        margin-left: -60px;
+    }
+
+    .detail__li__r{
+        width: 300px;
+        
+    }
+    .detail__li__l ul li,
+    .detail__li__r p:not(.long__text) {
+        line-height: 4;
+    }
+    
+    .long__text {
+        margin-top: 30px;
+        line-height: 1.2;
+    }
+    
 
 }
