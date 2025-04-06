@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yorimichi website</title>
+
+    <!-- スタイル -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 大きい箱 */
+        .load__center {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background-color: #838383;
+            overflow: hidden;
+        }
+
+        /* 大きい箱の中のローダーの箱 */
+        .loader {
+            color: #fff;
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+            background: linear-gradient(currentColor 0 0) 0 100%/0% 3px no-repeat;
+            /* 線の速さ */
+            animation: l2 2s linear forwards;
+        }
+
+        /* 街頭の画像 */
+        .loader:before {
+            content: "";
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            /* 街頭の画像 */
+            background-image: url("images/light_off.png");
+            background-position: center;
+            /* background-size: contain; */
+            background-repeat: no-repeat;
+        }
+
+        .circle {
+            position: absolute;
+            left: 49.4%;
+            top: 41.5%;
+            width: 25px;
+            height: 25px;
+            background: #e5ca8e;
+            border-radius: 50%;
+            animation: expansion-anim 2.8s linear forwards;
+        }
+
+
+        @keyframes l2 {
+            to {
+                background-size: 100% 3px
+            }
+        }
+
+        @keyframes expansion-anim {
+
+            /* ここの数値を100に近づけるほど、円拡大が早くなる */
+            83% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(100);
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="load__center">
+        <div class="loader"></div>
+        <div class="circle"></div>
+    </div>
+</body>
+
+</html>

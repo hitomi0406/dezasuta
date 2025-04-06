@@ -138,6 +138,35 @@ h2 p {
     color: #fff;
 }
 
+.scroll img {
+    animation-name: scroll__animetion;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes scroll__animetion {
+    0% {
+        transform: scaleY(0);
+        transform-origin: top;
+    }
+
+    50% {
+        transform: scaleY(1);
+        transform-origin: top;
+    }
+
+    50.1% {
+        transform: scaleY(1);
+        transform-origin: bottom;
+    }
+
+    100% {
+        transform: scaleY(0);
+        transform-origin: bottom;
+    }
+}
+
 /* aboutセクション */
 .about__section {
     background-color: #e5ca8e;
@@ -292,7 +321,7 @@ h2 p {
 .essei__text,
 .sanpo__text {
     margin-left: 30px;
-    max-width: 550px;
+    width: 550px;
     font-size: 16px;
 }
 
@@ -376,6 +405,14 @@ h2 p {
 
 /* まとめてるdivたち */
 
+.about__section,
+.service__section,
+.works__section,
+.writing__section,
+.contact__section {
+    z-index: 9999;
+}
+
 h3 {
     font-size: 50px;
     font-weight: bold;
@@ -398,6 +435,7 @@ h3 {
     width: 300px;
     margin: 0 auto;
     position: relative;
+    z-index: 9998;
 }
 
 .light__dark {
@@ -445,6 +483,58 @@ h3 {
     display: none;
 }
 
+/* スクロール */
+
+.circle {
+    background-color: #e5ca8e;
+    position: fixed;
+    bottom: -30px;
+    left: 0;
+    animation: entry-anim linear;
+    animation-timeline: view();
+    animation-range: contain 0% contain 100%;
+}
+
+@keyframes entry-anim {
+    0% {
+        scale: 1;
+    }
+
+    50% {
+        scale: 1;
+    }
+
+    60% {
+        scale: 5;
+    }
+
+    70% {
+        scale: 10;
+    }
+
+    100% {
+        scale: 100;
+    }
+}
+
+
+
+.circle {
+
+    /*円の見た目を設定*/
+    width: 20px;
+    height: 20px;
+    transform: scale(1);
+    background-color: #e5ca8e;
+    border-radius: 50%;
+    /*円の位置を画面中央に固定*/
+    position: absolute;
+    left: calc(50% - 50px);
+    top: calc(50% - 50px);
+    z-index: 1;
+}
+
+
 /* レスポンシブノートサイズ */
 @media screen and (max-width: 1440px) {
     .li__r {
@@ -465,7 +555,12 @@ h3 {
     .works__contents {
         justify-content: space-around;
     }
+
+    .writing__contents {
+        max-width: 500px;
+    }
 }
+
 
 
 
@@ -475,7 +570,8 @@ h3 {
         display: none;
     }
 
-    .header__inner::before {
+    .header__inner::before,
+    .srv__road::before {
         display: none;
     }
 
@@ -483,6 +579,8 @@ h3 {
         padding: 20px 20px 0 20px;
         z-index: 9999;
     }
+
+
 
     /* ハンバーガーメニュー */
     .hamburger {
@@ -539,48 +637,47 @@ h3 {
 
     /* ハンバーガーメニューがクリックされたときのスタイル */
 
-
     .sp__nav {
-        opacity: 0;
-        background-color: #838383;
         position: absolute;
         width: 100%;
         height: 100vh;
+        z-index: 9998;
+        top: 0;
+        left: 0;
+        margin-top: 50px;
+    }
+
+    .sp__nav__inner {
+        height: 100%;
+        background-color: #838383;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        transition: opacity 0.5s ease;
-        z-index: 9998;
     }
 
-    .sp__nav.visible {
-        transition: opacity 0.8s ease;
-        opacity: 100;
-        margin-top: 50px;
-    }
 
     .sp__nav ul {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 50px;
+        gap: 45px;
     }
 
     .sp__li__l li {
         color: #fff;
-        font-size: 30px;
+        font-size: 25px;
     }
 
 
     .sp__li__r {
-        font-size: 20px;
+        font-size: 18px;
         color: black;
         text-align: center;
         margin-top: 50px;
         width: 100px;
-        padding: 30px;
+        padding: 20px;
         border: solid 1px #ffffff;
         border-radius: 50px;
         background-color: #ffffff;
@@ -590,7 +687,7 @@ h3 {
         display: flex;
         justify-content: center;
         width: 200px;
-        margin-top: 50px;
+        margin-top: 20px;
     }
 
     .main__logo {
@@ -608,7 +705,8 @@ h3 {
     }
 
     .light {
-        width: 200px;
+        width: 100%;
+        text-align: center;
     }
 
     .scroll {
@@ -656,8 +754,10 @@ h3 {
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-inline: auto;
+        max-width: 500px;
+        width: 80%;
     }
-
 
     .slick-dots li.slick-active button:before {
         opacity: 1;
@@ -669,6 +769,21 @@ h3 {
         color: #ffffff;
     }
 
+    .slider__area picture {
+        height: auto;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+
+    .slide img {
+        transform: scale(.8);
+        transition: transform .3s;
+    }
+
+    .slide.slick-center img {
+        transform: scale(1);
+    }
 
     .taiyaki,
     .essei,
@@ -680,16 +795,14 @@ h3 {
     }
 
 
-    .taiyaki__text,
-    .essei__text,
-    .sanpo__text {
-        margin-top: 10px;
-        margin-left: 0;
-    }
+
 
     .taiyaki__text,
     .essei__text,
     .sanpo__text {
+        width: 300px;
+        margin-top: 10px;
+        margin-left: 0;
         white-space: pre-line;
         font-size: 13px;
         font-weight: normal;
@@ -739,6 +852,26 @@ h3 {
         border-radius: 50px;
         background-color: #ffffff;
         text-align: center;
+    }
+
+    .light::before {
+        width: 60%;
+        height: 30%;
+        content: "";
+        background: url(../images/road_r.png) no-repeat;
+        background-size: 100%;
+        position: absolute;
+    }
+
+    .light03::after {
+        width: 45%;
+        height: 30%;
+        content: "";
+        background: url(../images/road_l.png) no-repeat;
+        background-size: 100%;
+        position: absolute;
+        top: 100px;
+        left: 0;
     }
 
 }
