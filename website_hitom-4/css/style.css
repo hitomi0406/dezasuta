@@ -1,8 +1,16 @@
 @charset "UTF-8";
 
+body {
+  overflow-x: hidden;
+}
+
 /* ==========
 ローディング
 ==========*/
+.loading {
+  overflow: hidden;
+}
+
 .loading__wrapper {
   position: fixed;
   top: 0;
@@ -43,7 +51,8 @@
   text-align: center;
   background: linear-gradient(currentColor 0 0) 0 100%/0% 3px no-repeat;
   /* 線の速さ */
-  animation: l2 2s linear forwards;
+  -webkit-animation: l2 1.8s linear forwards;
+  animation: l2 1.8s linear forwards;
 }
 
 /* 街頭の画像 */
@@ -53,7 +62,7 @@
   width: 200px;
   height: 200px;
   /* 街頭の画像 */
-  background-image: url("../images/light_off.png");
+  background-image: url("../images/light_on.png");
   background-position: center;
   /* background-size: contain; */
   background-repeat: no-repeat;
@@ -67,10 +76,17 @@
   height: 25px;
   background: #e5ca8e;
   border-radius: 50%;
+  -webkit-animation: expansion-anim 2.8s linear forwards;
   animation: expansion-anim 2.8s linear forwards;
   left: calc(50% - 12px);
   top: calc(50% - 75px);
   z-index: 9995;
+}
+
+@-webkit-keyframes l2 {
+  to {
+    background-size: 100% 3px;
+  }
 }
 
 @keyframes l2 {
@@ -79,15 +95,41 @@
   }
 }
 
-@keyframes expansion-anim {
+@-webkit-keyframes expansion-anim {
 
   /* ここの数値を100に近づけるほど、円拡大が早くなる */
-  83% {
-    transform: scale(1);
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  75% {
+    transform: scale(0);
+    opacity: 0;
   }
 
   100% {
-    transform: scale(100);
+    transform: scale(120);
+    opacity: 1;
+  }
+}
+
+@keyframes expansion-anim {
+
+  /* ここの数値を100に近づけるほど、円拡大が早くなる */
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  75% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(120);
+    opacity: 1;
   }
 }
 
@@ -112,10 +154,11 @@ body {
     "Hiragino Sans", sans-serif;
 }
 
-.header__inner::before {
+.main__logo::before {
   content: url(../images/road_l.png);
   position: absolute;
   top: 380px;
+  left: 0;
 }
 
 .about__road {
@@ -144,11 +187,22 @@ body {
 }
 
 /* ヘッダーセクション */
+.header__logo {
+  position: sticky;
+  top: 0;
+  z-index: 9998;
+}
+
+.header__inner :hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
 .header__inner {
+
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  position: relative;
   max-width: 100%;
 }
 
@@ -227,10 +281,36 @@ h2 p {
 }
 
 .scroll img {
+  -webkit-animation-name: scroll__animetion;
   animation-name: scroll__animetion;
+  -webkit-animation-duration: 2.5s;
   animation-duration: 2.5s;
+  -webkit-animation-timing-function: ease-in-out;
   animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes scroll__animetion {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+
+  50.1% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
 }
 
 @keyframes scroll__animetion {
@@ -479,7 +559,7 @@ h2 p {
   text-align: center;
 }
 
-.footer {
+footer {
   background-color: #e6e6e6;
   padding-top: 100px;
   padding-bottom: 100px;
@@ -488,7 +568,9 @@ h2 p {
 
 .footer__border {
   border-top: solid 1px #838383;
+  margin-bottom: 50px;
 }
+
 
 /* まとめてるdivたち */
 
@@ -496,7 +578,7 @@ h2 p {
 .service__section,
 .works__section,
 .writing__section {
-  z-index: 9998;
+  z-index: 9997;
   position: relative;
   height: 150vh;
   background: linear-gradient(180deg, #e5ca8e, 90%, #838383);
@@ -525,7 +607,7 @@ h3 {
   height: 200vh;
   margin: 0 auto;
   position: relative;
-  z-index: 9995;
+  z-index: 9992;
   text-align: center;
 }
 
@@ -575,12 +657,10 @@ h3 {
 }
 
 /* スクロール */
-
 .light img {
   z-index: 9995;
   position: relative;
 }
-
 
 /* .scroll__circleと<img>をstickyで固定 */
 .scroll__circle,
@@ -588,6 +668,7 @@ h3 {
 .scroll__circle3,
 .scroll__circle4,
 .light img {
+  position: -webkit-sticky;
   position: sticky;
   /* スクロールに応じて固定 */
   top: 25%;
@@ -600,14 +681,13 @@ h3 {
 .scroll__circle2,
 .scroll__circle3,
 .scroll__circle4 {
-
   /*円の見た目を設定*/
   width: 20px;
   height: 20px;
   background-color: #e5ca8e;
   border-radius: 50%;
   left: calc(50% - 10px);
-  top: calc(50% - 120px);
+  top: calc(50% - 20vh);
   z-index: 9999;
 }
 
@@ -616,8 +696,31 @@ h3 {
 .scroll__circle3,
 .scroll__circle4 {
   background-color: #e5ca8e;
-  animation: entry-anim linear;
+  -webkit-animation: entry-anim 2s linear forwards;
+  animation: entry-anim 2s linear forwards;
   animation-timeline: view();
+}
+
+@-webkit-keyframes entry-anim {
+  0% {
+    scale: 1;
+    opacity: 0;
+  }
+
+  40% {
+    scale: 10;
+    opacity: 0;
+  }
+
+  70% {
+    scale: 150;
+    opacity: 1;
+  }
+
+  100% {
+    scale: 120;
+    opacity: 1;
+  }
 }
 
 @keyframes entry-anim {
@@ -627,41 +730,21 @@ h3 {
   }
 
   40% {
-    scale: 1;
+    scale: 10;
     opacity: 0;
   }
 
-
   70% {
-    scale: 100;
+    scale: 150;
     opacity: 1;
   }
 
   100% {
-    scale: 80;
+    scale: 120;
     opacity: 1;
   }
-
-
 }
 
-
-/* スクロールで背景色を変える */
-.light__container,
-.light__container2,
-.light__container3,
-.light__container4 {
-  background: #838383;
-  /* 元の色 */
-}
-
-.light__container.invert,
-.light__container2.invert,
-.light__container3.invert,
-.light__container4.invert {
-  background: #e5ca8e;
-  /* スクロール後の色 */
-}
 
 
 /* レスポンシブノートサイズ */
@@ -690,8 +773,11 @@ h3 {
   }
 }
 
-
-
+.service__section,
+.writing__section {
+  height: 200vh;
+  background: linear-gradient(180deg, #e5ca8e, 95%, #838383);
+}
 
 /* レスポンシブスマホサイズ */
 @media screen and (max-width: 960px) {
@@ -700,13 +786,20 @@ h3 {
   }
 
   .header__inner::before,
-  .srv__road::before {
+  .srv__road::before,
+  .main__logo::before {
     display: none;
   }
 
   .header__logo {
     padding: 20px 20px 0 20px;
-    z-index: 9999;
+    z-index: 9994;
+  }
+
+  .service__section,
+  .writing__section {
+    height: 300vh;
+    background: linear-gradient(180deg, #e5ca8e, 95%, #838383);
   }
 
   /* ハンバーガーメニュー */
@@ -723,7 +816,7 @@ h3 {
     /* 上からの距離を調整 */
     right: 20px;
     /* 右端に配置 */
-    z-index: 9999;
+    z-index: 9998;
     /* 他の要素より前面に表示 */
   }
 
@@ -764,15 +857,19 @@ h3 {
 
   /* ハンバーガーメニューがクリックされたときのスタイル */
 
+
+
   .sp__nav {
     position: absolute;
     width: 100%;
     height: 100vh;
-    z-index: 9998;
+    z-index: 9993;
     top: 0;
     left: 0;
     margin-top: 50px;
   }
+
+
 
   .sp__nav__inner {
     height: 100%;
@@ -790,6 +887,8 @@ h3 {
     align-items: center;
     gap: 45px;
   }
+
+
 
   .sp__li__l li {
     color: #fff;
@@ -910,6 +1009,7 @@ h3 {
     aspect-ratio: 335 / 239;
     width: 100%;
     height: 100%;
+    -o-object-fit: cover;
     object-fit: cover;
     transform: scale(0.8);
     transition: transform 0.3s;
@@ -994,6 +1094,7 @@ h3 {
     position: absolute;
   }
 
+
   .light03::after {
     width: 45%;
     height: 30%;
@@ -1003,5 +1104,110 @@ h3 {
     position: absolute;
     top: 100px;
     left: 0;
+  }
+
+  .loader {
+    -webkit-animation: l2 0.8s linear forwards;
+    animation: l2 0.8s linear forwards;
+  }
+
+
+  .circle {
+    -webkit-animation: expansion-anim 1.8s linear forwards;
+    animation: expansion-anim 1.8s linear forwards;
+  }
+
+  @-webkit-keyframes l2 {
+    to {
+      background-size: 100% 3px;
+    }
+  }
+
+  @keyframes l2 {
+    to {
+      background-size: 100% 3px;
+    }
+  }
+
+  @-webkit-keyframes expansion-anim {
+
+    /* ここの数値を100に近づけるほど、円拡大が早くなる */
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+
+    60% {
+      transform: scale(1);
+      oppacity: 0;
+    }
+
+    100% {
+      transform: scale(50);
+      opacity: 1;
+    }
+  }
+
+  @keyframes expansion-anim {
+
+    /* ここの数値を100に近づけるほど、円拡大が早くなる */
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+
+    75% {
+      transform: scale(0);
+      opacity: 0;
+    }
+
+    100% {
+      transform: scale(50);
+      opacity: 1;
+    }
+  }
+}
+
+@-webkit-keyframes entry-anim {
+  0% {
+    scale: 1;
+    opacity: 0;
+  }
+
+  40% {
+    scale: 10;
+    opacity: 0;
+  }
+
+  70% {
+    scale: 150;
+    opacity: 1;
+  }
+
+  100% {
+    scale: 120;
+    opacity: 1;
+  }
+}
+
+@keyframes entry-anim {
+  0% {
+    scale: 1;
+    opacity: 0;
+  }
+
+  40% {
+    scale: 10;
+    opacity: 0;
+  }
+
+  70% {
+    scale: 150;
+    opacity: 1;
+  }
+
+  100% {
+    scale: 120;
+    opacity: 1;
   }
 }

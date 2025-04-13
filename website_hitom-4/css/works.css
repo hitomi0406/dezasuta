@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 body {
-  background-color: #fff;
+  background-color: #fff
 }
 
 h3 {
@@ -116,7 +116,7 @@ h2 p {
   cursor: pointer;
 }
 
-.works__category input:checked + label {
+.works__category input:checked+label {
   background: #838383;
   color: #fff;
 }
@@ -146,7 +146,8 @@ h2 p {
   box-sizing: border-box;
 }
 
-.footer {
+footer {
+  color: #838383;
   background-color: #fff;
   padding-top: 100px;
   padding-bottom: 100px;
@@ -155,6 +156,7 @@ h2 p {
 
 .footer__border {
   border-top: solid 1px #838383;
+  margin-bottom: 50px;
 }
 
 /* 詳細ページ */
@@ -260,6 +262,11 @@ h1 {
 }
 
 .detail__footer__list :hover {
+  text-decoration: underline;
+}
+
+
+.see__site:hover {
   text-decoration: underline;
 }
 

@@ -1,6 +1,8 @@
 // ====================
 //ローディング
 // ====================
+document.body.classList.add("loading");
+
 window.addEventListener("load", function () {
   setTimeout(function () {
     const loader = document.querySelector(".loading__wrapper");
@@ -11,6 +13,7 @@ window.addEventListener("load", function () {
         "transitionend",
         function () {
           loader.style.display = "none";
+          document.body.classList.remove("loading"); // ←ここでスクロール解除！
         },
         { once: true }
       );
@@ -20,6 +23,17 @@ window.addEventListener("load", function () {
 
 document.getElementById("menu").addEventListener("click", function () {
   this.classList.toggle("z-shape");
+});
+
+
+$(document).ready(function() {
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 0) {
+      $('.header__inner').css('opacity', 0.5);
+    } else {
+      $('.header__inner').css('opacity', 1);
+    }
+  });
 });
 
 $(function () {
@@ -45,55 +59,23 @@ $(function () {
   });
 });
 
-// スクロール連動背景色
-jQuery(function(){
+$(function () {
+  // ハンバーガーメニューボタンがクリックされたときのイベントハンドラを設定
+  $(".hamburger").click(function () {
 
-	var light__container = jQuery('.light__container');
-	jQuery(window).scroll(function () {
-		if (jQuery(this).scrollTop() > 1750) { //スクロールが1500pxを越えたら
-			light__container.addClass('invert');
-		} else { //スクロールが1500pxを越えなければ
-			light__container.removeClass('invert');
-		}
-	});
+    // 現在のbodyタグのoverflowスタイルを確認
+    if ($("body").css("overflow") === "hidden") {
 
+      // もしoverflowがhiddenなら、bodyのスタイルを元に戻す
+      $("body").css({ height: "", overflow: "" });
+
+    } else {
+
+      // そうでなければ、bodyにheight: 100%とoverflow: hiddenを設定し、スクロールを無効にする
+      $("body").css({ height: "100%", overflow: "hidden" });
+
+    }
+  });
 });
 
-jQuery(function(){
 
-	var light__container2 = jQuery('.light__container2');
-	jQuery(window).scroll(function () {
-		if (jQuery(this).scrollTop() > 5610) { //スクロールが5750pxを越えたら
-			light__container2.addClass('invert');
-		} else { //スクロールが5750pxを越えなければ
-			light__container2.removeClass('invert');
-		}
-	});
-
-});
-
-jQuery(function(){
-
-	var light__container3 = jQuery('.light__container3');
-	jQuery(window).scroll(function () {
-		if (jQuery(this).scrollTop() > 9680) { //スクロールが9800pxを越えたら
-			light__container3.addClass('invert');
-		} else { //スクロールが9800pxを越えなければ
-			light__container3.removeClass('invert');
-		}
-	});
-
-});
-
-jQuery(function(){
-
-	var light__container4 = jQuery('.light__container4');
-	jQuery(window).scroll(function () {
-		if (jQuery(this).scrollTop() > 13800) { //スクロールが5750pxを越えたら
-			light__container4.addClass('invert');
-		} else { //スクロールが5750pxを越えなければ
-			light__container4.removeClass('invert');
-		}
-	});
-
-});
